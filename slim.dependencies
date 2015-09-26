@@ -1,0 +1,8 @@
+[
+ {
+   "remote":  "github",
+   "repository": "slim-opt/proprietary_vendor_oneplus",
+   "target_path": "vendor/oneplus",
+   "branch": "lp5.1"
+ }
+]
