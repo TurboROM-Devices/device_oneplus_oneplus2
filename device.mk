@@ -40,6 +40,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
+    init.qcom.early_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
@@ -124,6 +125,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
+# BoringSSL compatability wrapper
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -148,8 +153,11 @@ PRODUCT_PACKAGES += \
     flp.conf \
     gps.conf \
     izat.conf \
+    lowi.conf \
+    msap.conf \
     quipc.conf \
-    sap.conf
+    sap.conf \
+    xtwifi.conf
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -184,25 +192,37 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libdivxdrmdecrypt \
     libdashplayer \
+    libdivxdrmdecrypt \
+    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libOmxSwVencMpeg4 \
+    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVdecHevc \
     libOmxVenc \
+    libOmxVidcCommon \
+    libqcmediaplayer \
     libstagefrighthw \
+    libstagefright_soft_flacdec \
     qcmediaplayer
 
-PRODUCT_BOOT_JARS += qcmediaplayer
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer
+
+# Modules
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/modules/core_ctl.ko:system/lib/modules/core_ctl.ko
 
 # Power
 PRODUCT_PACKAGES += \
@@ -216,8 +236,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
-    $(LOCAL_PATH)/configs/fpc1021.conf:system/etc/fpc1021.conf
+    $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
 
 # Thermal config
 PRODUCT_COPY_FILES += \
@@ -231,15 +250,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_wlan_nv.bin \
-    $(LOCAL_PATH)/wifi/lowi.conf:system/etc/lowi.conf \
-    $(LOCAL_PATH)/wifi/msap.conf:system/etc/msap.conf \
-    $(LOCAL_PATH)/wifi/xtwifi.conf:system/etc/xtwifi.conf
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
+    dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf \
     wpa_supplicant_overlay.conf \
@@ -249,7 +267,8 @@ PRODUCT_PACKAGES += \
     hostapd.deny
 
 PRODUCT_PACKAGES += \
-    wcnss_service
+    wcnss_service \
+    libwcnss_qmi
 
 # Misc dependency packages
 PRODUCT_PACKAGES += \
