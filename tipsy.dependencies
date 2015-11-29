@@ -1,0 +1,14 @@
+[
+ {
+  "remote":  "github",
+  "repository": "Grarak/android_kernel_oneplus_msm8994",
+  "target_path": "kernel/oneplus/msm8994",
+  "branch": "cm-12.1"
+ },
+ {
+  "remote":  "github",
+  "repository": "TipsyOs-Devices/proprietary_vendor_oneplus",
+  "target_path": "vendor/oneplus",
+  "branch": "lp5.1"
+ }
+]
