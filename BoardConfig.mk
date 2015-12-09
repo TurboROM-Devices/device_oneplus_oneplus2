@@ -153,6 +153,7 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
+DONT_DEXPREOPT_PREBUILTS := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
