@@ -76,6 +76,9 @@ TARGET_CUSTOM_DTBTOOL := dtbToolOP2
 # Malloc
 MALLOC_IMPL := dlmalloc
 
+# ART
+WITH_DEXPREOPT := false
+
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
