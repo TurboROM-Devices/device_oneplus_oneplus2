@@ -50,10 +50,6 @@ TARGET_USES_64_BIT_BINDER := true
 # Cpusets
 ENABLE_CPUSETS := true
 
-# Kernel Toolchain
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9-kernel/bin
-KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
-
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-7 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
@@ -69,10 +65,6 @@ TARGET_KERNEL_SOURCE := kernel/oneplus/msm8994
 TARGET_KERNEL_CONFIG := cm_oneplus2_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_USES_UNCOMPRESSED_KERNEL := true
-
-# Flags for modem (we still have an old modem)
-COMMON_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
-COMMON_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
 
 # Audio
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
