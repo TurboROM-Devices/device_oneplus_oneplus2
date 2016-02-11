@@ -129,6 +129,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
