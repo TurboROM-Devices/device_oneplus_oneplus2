@@ -109,6 +109,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
     ro.opengles.version=196609
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.cpp.duplication=false \
+    camera.disable_zsl_mode=1
 # QC vendor extension
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
