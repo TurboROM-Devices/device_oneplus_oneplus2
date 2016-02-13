@@ -106,7 +106,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=36m \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
-    ro.sf.lcd_density=480 \
+    ro.sf.lcd_density=400 \
     ro.opengles.version=196609
 
 # Camera
