@@ -1,9 +1,9 @@
 [
   {
     "remote": "github",
-    "repository": "TeamOrion-Devices/device_oppo_common",
+    "repository": "MZO9400/device_oppo_common",
     "target_path": "device/oppo/common",
-    "branch": "6.0.1"
+    "branch": "6.0"
   },
   {
     "remote": "github",
