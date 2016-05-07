@@ -16,13 +16,7 @@
     "repository": "TeamOrion-Devices/vendor_oneplus",
     "target_path": "vendor/oneplus",
     "branch": "6.0.1"
-  },
-  {
-    "remote":      "orion",
-    "repository":  "device_qcom_common",
-    "target_path": "device/qcom/common",
-    "branch":      "cm-13.0"
-  },  
+  }, 
   {
     "remote": "github",
     "repository": "CyanogenMod/android_external_sony_boringssl-compat",
