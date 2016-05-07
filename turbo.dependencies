@@ -9,7 +9,7 @@
     "remote": "github",
     "repository": "CyanogenMod/android_kernel_oneplus_msm8994",
     "target_path": "kernel/oneplus/msm8994",
-    "branch": " cm-13.0"
+    "branch": "cm-13.0"
   },
   {
     "remote": "github",
